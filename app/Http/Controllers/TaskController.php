@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Antwerpes\Barcodes\Barcodes;
+use Antwerpes\Barcodes\Enumerators\Format;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    public function createBarCode()
+    {
+        $svg = Barcodes::create('12345678', Format::CODE_128);
+        file_put_contents('img.svg', $svg);
+    }
+
     /**
      * Display a listing of the resource.
      *

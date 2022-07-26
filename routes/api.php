@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('tasks', TaskController::class);
 
+Route::post('createBarCode', [TaskController::class, 'createBarCode']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
