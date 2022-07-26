@@ -96,7 +96,7 @@ return [
     'middleware' => [
         'api',
         // TODO: Uncomment this to get started with authenticated
-        // 'auth:sanctum',
+        'auth:sanctum',
         DispatchRestifyStartingEvent::class,
         AuthorizeRestify::class,
     ],
@@ -139,11 +139,11 @@ return [
         /*
         | Specify either to serialize index meta (policy) information or not. For performance reasons we recommend to disable it.
         */
-        'serialize_index_meta' => true,
+        'serialize_index_meta' => false,
 
         /*
         | Specify either to serialize show meta (policy) information or not.
         */
-        'serialize_show_meta' => true,
+        'serialize_show_meta' => false,
     ],
 ];

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Contact;
 use App\Models\Organization;
+use App\Models\Task;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -22,5 +23,8 @@ class DatabaseSeeder extends Seeder
         Organization::factory()
             ->has(Contact::factory()->count(2))
             ->count(10)->create();
+
+        Task::factory()->times(50)->create();
+
     }
 }
